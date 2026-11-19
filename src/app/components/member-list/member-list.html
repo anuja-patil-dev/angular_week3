@@ -1,0 +1,259 @@
+<ul class="nav nav-tabs nav-pills ">
+<li class="nav-item">
+<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#all">
+All
+</button>
+</li>
+<li class="nav-item">
+<button class="nav-link" data-bs-toggle="tab" data-bs-target="#frontend" (click)="filter('frontend')">
+Frontend
+</button>
+</li>
+<li class="nav-item">
+<button class="nav-link" data-bs-toggle="tab" data-bs-target="#backend" (click)="filter('backend')">
+Backend
+</button>
+</li>
+<li class="nav-item">
+<button class="nav-link" data-bs-toggle="tab" data-bs-target="#data" (click)="filter('data')">
+Data
+</button>
+</li>
+</ul>
+<div class="tab-content">
+
+<div class="container mt-4 tab-pane fade" id="frontend">
+  <div class="row">
+
+    @for(member of filterMembers; track member.id) {
+
+      <div class="col-12 col-md-4 mb-3">
+
+        <div class="card h-100"
+        [ngClass]="{'bg-secondary': member.status === 'left',
+          'border border-warning':member.status === 'on-leave',
+          'opacity-50': member.status === 'left',
+        }">
+
+          <div class="card-header">
+            <h5 class="mb-0">Personal Information</h5>
+          </div>
+
+          <div class="card-body">
+
+            <img src="/nature.jpg"
+                 class="card-img-top mb-1"
+                 alt="Demo">
+
+            <h5 class="card-title">{{member.name}}</h5>
+
+            <hr>
+
+            <h6 class="card-subtitle mb-2">
+              {{member.role}}
+            </h6>
+
+            <p class="card-text">
+              This is a simple card.
+            </p>
+
+          </div>
+
+          <div class="card-footer">
+            <span class="badge bg-secondary me-2" 
+            [class.bg-danger]="member.status==='on-leave'">
+              {{ member.status | titlecase }}
+            </span>
+
+            <span class="badge bg-secondary">
+              {{member.joined}}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    } @empty {
+        <p>No Member Present</p>
+    }
+
+  </div>
+</div>
+<div class="container mt-4 tab-pane fade" id="backend">
+  <div class="row">
+
+    @for(member of filterMembers; track member.id) {
+
+      <div class="col-12 col-md-4 mb-3">
+
+        <div class="card h-100"
+        [ngClass]="{'bg-secondary': member.status === 'left',
+          'border border-warning':member.status === 'on-leave',
+          'opacity-50': member.status === 'left',
+        }">
+
+          <div class="card-header">
+            <h5 class="mb-0">Personal Information</h5>
+          </div>
+
+          <div class="card-body">
+
+            <img src="/nature.jpg"
+                 class="card-img-top mb-1"
+                 alt="Demo">
+
+            <h5 class="card-title">{{member.name}}</h5>
+
+            <hr>
+
+            <h6 class="card-subtitle mb-2">
+              {{member.role}}
+            </h6>
+
+            <p class="card-text">
+              This is a simple card.
+            </p>
+
+          </div>
+
+          <div class="card-footer">
+            <span class="badge bg-secondary me-2" 
+            [class.bg-danger]="member.status==='on-leave'">
+              {{ member.status | titlecase }}
+            </span>
+
+            <span class="badge bg-secondary">
+              {{member.joined}}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    } @empty {
+        <p>No Member Present</p>
+    }
+
+  </div>
+</div>
+<div class="container mt-4 tab-pane fade" id="data">
+  <div class="row">
+
+    @for(member of filterMembers; track member.id) {
+
+      <div class="col-12 col-md-4 mb-3">
+
+        <div class="card h-100"
+         [ngClass]="{'bg-secondary': member.status === 'left',
+          'border border-warning':member.status === 'on-leave',
+          'opacity-50': member.status === 'left',
+        }">
+
+          <div class="card-header">
+            <h5 class="mb-0">Personal Information</h5>
+          </div>
+
+          <div class="card-body">
+
+            <img src="/nature.jpg"
+                 class="card-img-top mb-1"
+                 alt="Demo">
+
+            <h5 class="card-title">{{member.name}}</h5>
+
+            <hr>
+
+            <h6 class="card-subtitle mb-2">
+              {{member.role}}
+            </h6>
+
+            <p class="card-text">
+              This is a simple card.
+            </p>
+
+          </div>
+
+          <div class="card-footer">
+            <span class="badge bg-secondary me-2" 
+            [class.bg-danger]="member.status==='on-leave'">
+              {{ member.status | titlecase }}
+            </span>
+
+            <span class="badge bg-secondary">
+              {{member.joined}}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    } @empty {
+        <p>No Member Present</p>
+    }
+
+  </div>
+</div>
+
+
+<div class="container mt-4 tab-pane fade show active" id="all">
+  <div class="row">
+
+    @for(member of members; track member.id) {
+
+      <div class="col-12 col-md-4 mb-3">
+
+        <div class="card h-100"
+         [ngClass]="{'bg-secondary': member.status === 'left',
+          'border border-warning':member.status === 'on-leave',
+          'opacity-50': member.status === 'left',
+        }">
+
+          <div class="card-header">
+            <h5 class="mb-0">Personal Information</h5>
+          </div>
+
+          <div class="card-body">
+
+            <img src="/nature.jpg"
+                 class="card-img-top mb-1"
+                 alt="Demo">
+
+            <h5 class="card-title">{{member.name}}</h5>
+
+            <hr>
+
+            <h6 class="card-subtitle mb-2">
+              {{member.role}}
+            </h6>
+
+            <p class="card-text">
+              This is a simple card.
+            </p>
+
+          </div>
+
+          <div class="card-footer">
+            <span class="badge bg-secondary me-2" 
+            [class.bg-danger]="member.status==='on-leave'">
+              {{ member.status | titlecase }}
+            </span>
+
+            <span class="badge bg-secondary">
+              {{member.joined}}
+            </span>
+          </div>
+
+        </div>
+
+      </div>
+
+    } @empty {
+        <p>No Member Present</p>
+    }
+
+  </div>
+</div>
+</div>

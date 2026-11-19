@@ -1,8 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Header } from './header/header';
+import { Databinding } from './components/databinding/databinding';
+import { MemberList } from './components/member-list/member-list';
+
+
 
 @Component({
-  imports: [RouterOutlet],
+  imports: [Header,Databinding,MemberList],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
